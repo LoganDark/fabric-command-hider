@@ -1,4 +1,4 @@
-package net.logandark.barebones.mixin;
+package net.logandark.commandhider.mixin;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.resource.SplashTextResourceSupplier;

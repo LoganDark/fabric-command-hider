@@ -1,33 +1,33 @@
 {
 	"schemaVersion": 1,
-	"id": "barebones",
+	"id": "command-hider",
 	"version": "${version}",
 
-	"name": "Barebones",
+	"name": "CommandHider",
 	"description": "Congrats, you made it work!",
 	"authors": ["LoganDark"],
 	"contact": {
-		"sources": "https://github.com/LoganDark/fabric-barebones",
-		"website": "https://github.com/LoganDark/fabric-barebones",
-		"issues": "https://github.com/LoganDark/fabric-barebones/issues"
+		"sources": "https://github.com/LoganDark/fabric-command-hider",
+		"website": "https://github.com/LoganDark/fabric-command-hider",
+		"issues": "https://github.com/LoganDark/fabric-command-hider/issues"
 	},
 
 	"custom": {},
 
 	"license": "GPLv3",
-	"icon": "assets/barebones/icon.png",
+	"icon": "assets/command-hider/icon.png",
 
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			{
 				"adapter": "kotlin",
-				"value": "net.logandark.barebones.Barebones"
+				"value": "net.logandark.commandhider.CommandHider"
 			}
 		]
 	},
 
-	"mixins": ["barebones.mixins.json"],
+	"mixins": ["command-hider.mixins.json"],
 
 	"depends": {
 		"fabricloader": ">=${loader_version}",

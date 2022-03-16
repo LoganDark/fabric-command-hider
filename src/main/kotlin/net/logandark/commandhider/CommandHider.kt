@@ -1,12 +1,12 @@
-package net.logandark.barebones
+package net.logandark.commandhider
 
 import net.fabricmc.api.ModInitializer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 @Suppress("unused")
-object Barebones : ModInitializer {
-	private val logger: Logger = LoggerFactory.getLogger(Barebones.javaClass)
+object CommandHider : ModInitializer {
+	private val logger: Logger = LoggerFactory.getLogger(CommandHider.javaClass)
 
 	override fun onInitialize() {
 		logger.info("Hello Fabric world!")
