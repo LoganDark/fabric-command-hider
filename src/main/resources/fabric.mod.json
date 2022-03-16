@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "barebones",
+	"version": "${version}",
+
+	"name": "Barebones",
+	"description": "Congrats, you made it work!",
+	"authors": ["LoganDark"],
+	"contact": {
+		"sources": "https://github.com/LoganDark/fabric-barebones",
+		"website": "https://github.com/LoganDark/fabric-barebones",
+		"issues": "https://github.com/LoganDark/fabric-barebones/issues"
+	},
+
+	"custom": {},
+
+	"license": "GPLv3",
+	"icon": "assets/barebones/icon.png",
+
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"adapter": "kotlin",
+				"value": "net.logandark.barebones.Barebones"
+			}
+		]
+	},
+
+	"mixins": ["barebones.mixins.json"],
+
+	"depends": {
+		"fabricloader": ">=${loader_version}",
+		"fabric-language-kotlin": ">=${fabric_kotlin_version}",
+		"minecraft": "1.18.x"
+	},
+	"suggests": {}
+}
