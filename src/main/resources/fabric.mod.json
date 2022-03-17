@@ -18,20 +18,12 @@
 	"icon": "assets/command-hider/icon.png",
 
 	"environment": "*",
-	"entrypoints": {
-		"main": [
-			{
-				"adapter": "kotlin",
-				"value": "net.logandark.commandhider.CommandHider"
-			}
-		]
-	},
+	"entrypoints": {},
 
 	"mixins": ["command-hider.mixins.json"],
 
 	"depends": {
 		"fabricloader": ">=${loader_version}",
-		"fabric-language-kotlin": ">=${fabric_kotlin_version}",
 		"minecraft": "1.18.x"
 	},
 	"suggests": {}

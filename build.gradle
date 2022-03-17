@@ -1,7 +1,6 @@
 plugins {
 	id 'fabric-loom'
 	id 'maven-publish'
-	id 'org.jetbrains.kotlin.jvm'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -18,7 +17,9 @@ loom {
 }
 
 repositories {
+	mavenLocal()
 	maven { url = 'https://maven.fabricmc.net/' }
+	maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
 }
 
 dependencies {
@@ -30,7 +31,7 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	//modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
+	modImplementation 'me.lucko:fabric-permissions-api:0.1-SNAPSHOT'
 
 	//modImplementation(fabricApi.module('fabric-resource-loader-v0', project.fabric_version))
 	//modImplementation('io.github.prospector:modmenu:1.14.6+build.31') {
@@ -44,8 +45,7 @@ dependencies {
 processResources {
 	filesMatching("fabric.mod.json") {
 		expand 'version': project.version,
-			'loader_version': project.loader_version,
-			'fabric_kotlin_version': project.fabric_kotlin_version
+			'loader_version': project.loader_version
 	}
 }
 
@@ -87,5 +87,3 @@ publishing {
 		}
 	}
 }
-
-compileKotlin.kotlinOptions.jvmTarget = '17'

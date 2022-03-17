@@ -2,9 +2,9 @@
 	"required": true,
 	"package": "net.logandark.commandhider.mixin",
 	"compatibilityLevel": "JAVA_17",
-	"mixins": [],
-	"client": ["AntiCoronavirus"],
-	"server": [],
+	"mixins": [
+		"MixinCommandNode"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	}
