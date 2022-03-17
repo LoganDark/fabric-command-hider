@@ -69,10 +69,10 @@ public abstract class MixinCommandNode<S> implements CommandNodeDuck {
 		}
 	}
 
-	@Inject(method = "canUse", at = @At("HEAD"), cancellable = true, remap = false)
+	@Inject(method = "canUse", at = @At("RETURN"), cancellable = true, remap = false)
 	private void commandHider$onCanUse(S source, CallbackInfoReturnable<Boolean> cir) {
-		if (source instanceof CommandSource commandSource && !CommandHider.canUsePath(commandSource, this.getPath())) {
-			cir.setReturnValue(false);
+		if (source instanceof CommandSource commandSource) {
+			cir.setReturnValue(CommandHider.canUsePath(commandSource, this.getPath(), cir.getReturnValue()));
 		}
 	}
 }
