@@ -12,16 +12,11 @@ https://github.com/lucko/fabric-permissions-api) should work.
 
 ## Warning
 
-This mod relies on [the **next** version of Fabric Loader](
+This mod relies on [Fabric Loader 0.14.0](
 https://github.com/FabricMC/fabric-loader/pull/630) to be able to mix into
-Brigadier, and therefore will not work on real servers until it is fully
-released. The mod itself works, but the loader is not ready yet. Installing this
-mod on a loader with no support will simply have no effect. 0.13.4 or 0.14.0
-will come with support for this out of the box.
-
-When the changes are finally released, this section will be replaced by another
-warning that Command Hider only works on very recent versions of Fabric Loader.
-For now, it only works on an **unreleased** version.
+Brigadier, and therefore will not work on earlier versions. Installing this mod
+on a loader with no support will simply have no effect. 0.14.0 is the first
+version with support for this out of the box.
 
 ## Usage
 
