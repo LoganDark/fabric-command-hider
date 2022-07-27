@@ -7,12 +7,15 @@ import me.lucko.fabric.api.permissions.v0.Permissions;
 import net.fabricmc.fabric.api.util.TriState;
 import net.logandark.commandhider.ducks.CommandNodeDuck;
 import net.minecraft.command.CommandSource;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Optional;
 
 public class CommandHider {
 	/**
@@ -36,7 +39,13 @@ public class CommandHider {
 	 */
 	@Nullable
 	public static <S extends CommandSource> String getPrefix(S source, RootCommandNode<S> root) {
-		if (source instanceof ServerCommandSource serverCommandSource && root == serverCommandSource.getServer().getCommandManager().getDispatcher().getRoot()) {
+		if (source instanceof ServerCommandSource serverCommandSource &&
+			Optional.ofNullable(serverCommandSource.getServer())
+				.map(MinecraftServer::getCommandManager)
+				.map(CommandManager::getDispatcher)
+				.map(CommandDispatcher::getRoot)
+				.equals(Optional.of(root))
+		) {
 			return "command";
 		}
 
